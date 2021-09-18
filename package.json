@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/tylerguy/discord-bot/issues"
   },
-  "homepage": "https://github.com/tylerguy/discord-bot#readme"
+  "homepage": "https://github.com/tylerguy/discord-bot#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "discord.js": "^12.5.3",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^4.9.1"
+  }
 }
