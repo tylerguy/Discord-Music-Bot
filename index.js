@@ -6,6 +6,8 @@ const client = new Discord.Client();
 
 const queue = new Map();
 
+
+//status messages for console
 client.once("ready", () => {
   console.log("Ready!");
 });
@@ -18,6 +20,7 @@ client.once("disconnect", () => {
   console.log("Disconnect!");
 });
 
+//command creation
 client.on("message", async message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
@@ -41,6 +44,8 @@ client.on("message", async message => {
 async function execute(message, serverQueue) {
   const args = message.content.split(" ");
 
+
+//join voice channel
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel)
     return message.channel.send(
@@ -53,6 +58,8 @@ async function execute(message, serverQueue) {
     );
   }
 
+
+//get video from video id
   const songInfo = await ytdl.getInfo(args[1]);
   const song = {
         title: songInfo.videoDetails.title,
@@ -69,6 +76,7 @@ async function execute(message, serverQueue) {
       playing: true
     };
 
+//create queue
     queue.set(message.guild.id, queueContruct);
 
     queueContruct.songs.push(song);
@@ -88,6 +96,7 @@ async function execute(message, serverQueue) {
   }
 }
 
+//skipping songs
 function skip(message, serverQueue) {
   if (!message.member.voice.channel)
     return message.channel.send(
@@ -98,6 +107,7 @@ function skip(message, serverQueue) {
   serverQueue.connection.dispatcher.end();
 }
 
+//stopping queue
 function stop(message, serverQueue) {
   if (!message.member.voice.channel)
     return message.channel.send(
@@ -111,6 +121,7 @@ function stop(message, serverQueue) {
   serverQueue.connection.dispatcher.end();
 }
 
+//playing songs
 function play(guild, song) {
   const serverQueue = queue.get(guild.id);
   if (!song) {
