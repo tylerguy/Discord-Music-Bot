@@ -93,8 +93,8 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.on('ready', () => {
-  bot.user.setStatus('available')
-  bot.user.setPresence({
+  client.bot.setStatus('available')
+  client.bot.setPresence({
       game: {
           name: 'with depression',
           type: "STREAMING",
