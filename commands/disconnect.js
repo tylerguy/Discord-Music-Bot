@@ -1,7 +1,7 @@
 const {GuildMember} = require('discord.js');
 
 module.exports = {
-  name: 'Disconnect',
+  name: 'disconnect',
   description: 'Disconnects the bot from the voice channel',
   async execute(interaction, player) {
     if (!(interaction.member instanceof GuildMember) || !interaction.member.voice.channel) {
