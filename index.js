@@ -92,7 +92,7 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-bot.on('ready', () => {
+client.on('ready', () => {
   bot.user.setStatus('available')
   bot.user.setPresence({
       game: {
