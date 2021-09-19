@@ -48,6 +48,13 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
+  client.user.setStatus('available')
+  client.user.setPresence({
+      game: {
+          name: 'with depression',
+          type: "STREAMING",
+          url: "https://www.twitch.tv/monstercat"
+      }
 });
 
 client.once('reconnecting', () => {
@@ -90,17 +97,6 @@ client.on('interactionCreate', async interaction => {
       content: 'There was an error trying to execute that command!',
     });
   }
-});
-
-client.on('ready', () => {
-  client.user.setStatus('available')
-  client.user.setPresence({
-      game: {
-          name: 'with depression',
-          type: "STREAMING",
-          url: "https://www.twitch.tv/monstercat"
-      }
-  });
 });
 
 client.login(token);
