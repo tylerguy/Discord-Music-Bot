@@ -55,6 +55,8 @@ client.once('ready', async () => {
           type: "STREAMING",
           url: "https://www.twitch.tv/monstercat"
       }
+  });
+  
 });
 
 client.once('reconnecting', () => {
