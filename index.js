@@ -144,6 +144,17 @@ function play(guild, song) {
 
 //pausing queue
 
+module.exports = {
+  name: 'pause',
+  description: 'Pause current song!',
+  async execute(interaction, player) {
+    if (!(interaction.member instanceof GuildMember) || !interaction.member.voice.channel) {
+      return void interaction.reply({
+        content: 'You are not in a voice channel!',
+        ephemeral: true,
+      });
+    }
+
 if (
   interaction.guild.me.voice.channelId &&
   interaction.member.voice.channelId !== interaction.guild.me.voice.channelId
