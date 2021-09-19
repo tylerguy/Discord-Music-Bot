@@ -25,9 +25,9 @@ module.exports = {
     const queue = player.getQueue(interaction.guildId);
     if (!queue || !queue.playing)
       return void interaction.followUp({
-        content: '❌ | No music is being played!',
+        content: 'No music is being played!',
       });
     queue.destroy();
-    return void interaction.followUp({content: '🛑 | Stopped the player!'});
+    return void interaction.followUp({content: 'Stopped the player!'});
   },
 };

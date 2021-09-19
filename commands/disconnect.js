@@ -1,9 +1,8 @@
-  
 const {GuildMember} = require('discord.js');
 
 module.exports = {
-  name: 'pause',
-  description: 'Pause current song!',
+  name: 'Disconnect',
+  description: 'Disconnects the bot from the voice channel',
   async execute(interaction, player) {
     if (!(interaction.member instanceof GuildMember) || !interaction.member.voice.channel) {
       return void interaction.reply({
@@ -28,9 +27,7 @@ module.exports = {
       return void interaction.followUp({
         content: 'No music is being played!',
       });
-    const success = queue.setPaused(true);
-    return void interaction.followUp({
-      content: success ? 'Paused!' : 'Something went wrong!',
-    });
+    queue.destroy();
+    return void interaction.followUp({content: 'Disconnected from the voice channel'});
   },
 };
