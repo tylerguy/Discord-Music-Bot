@@ -48,15 +48,7 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
-  client.user.setStatus('available')
-  client.user.setPresence({
-      game: {
-          name: 'with depression',
-          type: "STREAMING",
-          url: "https://www.twitch.tv/monstercat"
-      }
-  });
-  
+ 
 });
 
 client.once('reconnecting', () => {
