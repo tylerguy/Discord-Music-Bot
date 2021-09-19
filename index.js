@@ -1,181 +1,95 @@
-const Discord = require("discord.js");
-const { prefix, token } = require("./config.json");
-const ytdl = require("ytdl-core");
-const {GuildMember} = require('discord.js');
+const fs = require('fs');
+const Discord = require('discord.js');
+const Client = require('./client/Client');
+const {token} = require('./config.json');
+const {Player} = require('discord-player');
 
-const client = new Discord.Client();
+const client = new Client();
+client.commands = new Discord.Collection();
 
-const queue = new Map();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-
-//status messages for console
-client.once("ready", () => {
-  console.log("Ready!");
-});
-
-client.once("reconnecting", () => {
-  console.log("Reconnecting!");
-});
-
-client.once("disconnect", () => {
-  console.log("Disconnect!");
-});
-
-//command creation
-client.on("message", async message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  const serverQueue = queue.get(message.guild.id);
-
-  if (message.content.startsWith(`${prefix}play`)) {
-    execute(message, serverQueue);
-    return;
-  } else if (message.content.startsWith(`${prefix}skip`)) {
-    skip(message, serverQueue);
-    return;
-  } else if (message.content.startsWith(`${prefix}stop`)) {
-    stop(message, serverQueue);
-    return;
-  } else {
-    message.channel.send("You need to enter a valid command!");
-  };
-});
-
-async function execute(message, serverQueue) {
-  const args = message.content.split(" ");
-
-
-//join voice channel
-  const voiceChannel = message.member.voice.channel;
-  if (!voiceChannel)
-    return message.channel.send(
-      "You need to be in a voice channel to play music!"
-    );
-  const permissions = voiceChannel.permissionsFor(message.client.user);
-  if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
-    return message.channel.send(
-      "I need the permissions to join and speak in your voice channel!"
-    );
-  }
-
-
-//get video from video id
-  const songInfo = await ytdl.getInfo(args[1]);
-  const song = {
-        title: songInfo.videoDetails.title,
-        url: songInfo.videoDetails.video_url,
-   };
-
-  if (!serverQueue) {
-    const queueContruct = {
-      textChannel: message.channel,
-      voiceChannel: voiceChannel,
-      connection: null,
-      songs: [],
-      volume: 5,
-      playing: true
-    };
-
-//create queue
-    queue.set(message.guild.id, queueContruct);
-
-    queueContruct.songs.push(song);
-
-    try {
-      var connection = await voiceChannel.join();
-      queueContruct.connection = connection;
-      play(message.guild, queueContruct.songs[0]);
-    } catch (err) {
-      console.log(err);
-      queue.delete(message.guild.id);
-      return message.channel.send(err);
-    }
-  } else {
-    serverQueue.songs.push(song);
-    return message.channel.send(`${song.title} has been added to the queue!`);
-  }
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+  client.commands.set(command.name, command);
 }
 
-//skipping songs
-function skip(message, serverQueue) {
-  if (!message.member.voice.channel)
-    return message.channel.send(
-      "You have to be in a voice channel to stop the music!"
-    );
-  if (!serverQueue)
-    return message.channel.send("There is no song that I could skip!");
-  serverQueue.connection.dispatcher.end();
-}
+console.log(client.commands);
 
-//stopping queue
-function stop(message, serverQueue) {
-  if (!message.member.voice.channel)
-    return message.channel.send(
-      "You have to be in a voice channel to stop the music!"
-    );
-    
-  if (!serverQueue)
-    return message.channel.send("There is no song that I could stop!");
-    
-  serverQueue.songs = [];
-  serverQueue.connection.dispatcher.end();
-}
+const player = new Player(client);
 
-//playing songs
-function play(guild, song) {
-  const serverQueue = queue.get(guild.id);
-  if (!song) {
-    serverQueue.voiceChannel.leave();
-    queue.delete(guild.id);
-    return;
-  }
+player.on('error', (queue, error) => {
+  console.log(`[${queue.guild.name}] Error emitted from the queue: ${error.message}`);
+});
 
-  const dispatcher = serverQueue.connection
-    .play(ytdl(song.url))
-    .on("finish", () => {
-      serverQueue.songs.shift();
-      play(guild, serverQueue.songs[0]);
-    })
-    .on("error", error => console.error(error));
-  dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send(`Start playing: **${song.title}**`);
-}
+player.on('connectionError', (queue, error) => {
+  console.log(`[${queue.guild.name}] Error emitted from the connection: ${error.message}`);
+});
 
-//pausing queue
+player.on('trackStart', (queue, track) => {
+  queue.metadata.send(`🎶 | Started playing: **${track.title}** in **${queue.connection.channel.name}**!`);
+});
 
-module.exports = {
-  name: 'pause',
-  description: 'Pause current song!',
-  async execute(interaction, player) {
-    if (!(interaction.member instanceof GuildMember) || !interaction.member.voice.channel) {
-      return void interaction.reply({
-        content: 'You are not in a voice channel!',
-        ephemeral: true,
+player.on('trackAdd', (queue, track) => {
+  queue.metadata.send(`🎶 | Track **${track.title}** queued!`);
+});
+
+player.on('botDisconnect', queue => {
+  queue.metadata.send('❌ | I was manually disconnected from the voice channel, clearing queue!');
+});
+
+player.on('channelEmpty', queue => {
+  queue.metadata.send('❌ | Nobody is in the voice channel, leaving...');
+});
+
+player.on('queueEnd', queue => {
+  queue.metadata.send('✅ | Queue finished!');
+});
+
+client.once('ready', async () => {
+  console.log('Ready!');
+});
+
+client.once('reconnecting', () => {
+  console.log('Reconnecting!');
+});
+
+client.once('disconnect', () => {
+  console.log('Disconnect!');
+});
+
+client.on('messageCreate', async message => {
+  if (message.author.bot || !message.guild) return;
+  if (!client.application?.owner) await client.application?.fetch();
+
+  if (message.content === '!deploy' && message.author.id === client.application?.owner?.id) {
+    await message.guild.commands
+      .set(client.commands)
+      .then(() => {
+        message.reply('Deployed!');
+      })
+      .catch(err => {
+        message.reply('Could not deploy commands! Make sure the bot has the application.commands permission!');
+        console.error(err);
       });
-    }
+  }
+});
 
-    if (
-      interaction.guild.me.voice.channelId &&
-      interaction.member.voice.channelId !== interaction.guild.me.voice.channelId
-    ) {
-      return void interaction.reply({
-        content: 'You are not in my voice channel!',
-        ephemeral: true,
-      });
-    }
+client.on('interactionCreate', async interaction => {
+  const command = client.commands.get(interaction.commandName.toLowerCase());
 
-    await interaction.deferReply();
-    const queue = player.getQueue(interaction.guildId);
-    if (!queue || !queue.playing)
-      return void interaction.followUp({
-        content: '❌ | No music is being played!',
-      });
-    const success = queue.setPaused(true);
-    return void interaction.followUp({
-      content: success ? '⏸ | Paused!' : '❌ | Something went wrong!',
+  try {
+    if (interaction.commandName == 'ban' || interaction.commandName == 'userinfo') {
+      command.execute(interaction, client);
+    } else {
+      command.execute(interaction, player);
+    }
+  } catch (error) {
+    console.error(error);
+    interaction.followUp({
+      content: 'There was an error trying to execute that command!',
     });
-  },
-};
+  }
+});
 
 client.login(token);
