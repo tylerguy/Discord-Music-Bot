@@ -9,7 +9,7 @@ module.exports = {
 
     for (const file of commandFiles) {
       const command = require(`./${file}`);
-      str += `Name: ${command.name}, Description: ${command.description} \n`;
+      str += `Name: ${command.name}\n**Description: ${command.description}** \n \n`;
     }
 
     return void interaction.reply({

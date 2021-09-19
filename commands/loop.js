@@ -53,7 +53,7 @@ module.exports = {
 
       const queue = player.getQueue(interaction.guildId);
       if (!queue || !queue.playing) {
-        return void interaction.followUp({content: '❌ | No music is being played!'});
+        return void interaction.followUp({content: 'No music is being played!'});
       }
 
       const loopMode = interaction.options.get('mode').value;
@@ -61,7 +61,7 @@ module.exports = {
       const mode = loopMode === QueueRepeatMode.TRACK ? '🔂' : loopMode === QueueRepeatMode.QUEUE ? '🔁' : '▶';
 
       return void interaction.followUp({
-        content: success ? `${mode} | Updated loop mode!` : '❌ | Could not update loop mode!',
+        content: success ? `${mode} | Updated loop mode!` : 'Could not update loop mode!',
       });
     } catch (error) {
       console.log(error);
