@@ -77,6 +77,8 @@ client.on('messageCreate', async message => {
         message.reply('Could not deploy commands! Make sure the bot has the application.commands permission!');
         console.error(err);
       });
-  }
+  
+    }
+  });
 
 client.login(token);
