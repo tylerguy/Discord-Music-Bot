@@ -48,6 +48,7 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
+  client.user.setActivity(client.guilds.size + " server" + (client.guilds.size === 1 ? "" : "s"), { type: "WATCHING" }).catch(console.error);
  
 });
 
@@ -74,23 +75,7 @@ client.on('messageCreate', async message => {
         console.error(err);
       });
   }
-});
 
-client.on('interactionCreate', async interaction => {
-  const command = client.commands.get(interaction.commandName.toLowerCase());
-
-  try {
-    if (interaction.commandName == 'ban' || interaction.commandName == 'userinfo') {
-      command.execute(interaction, client);
-    } else {
-      command.execute(interaction, player);
-    }
-  } catch (error) {
-    console.error(error);
-    interaction.followUp({
-      content: 'There was an error trying to execute that command!',
-    });
-  }
 });
 
 client.login(token);
