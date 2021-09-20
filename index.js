@@ -52,8 +52,7 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
-  const server = guild.name;
-  client.user.setActivity(server, { type: 'WATCHING' });
+  client.user.setActivity("Testing Server", { type: 'WATCHING' });
  
 });
 
