@@ -7,6 +7,7 @@ const {Player} = require('discord-player');
 const client = new Client();
 client.commands = new Discord.Collection();
 
+//read commands
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -18,6 +19,7 @@ console.log(client.commands);
 
 const player = new Player(client);
 
+//status messages
 player.on('error', (queue, error) => {
   console.log(`[${queue.guild.name}] Error emitted from the queue: ${error.message}`);
 });
@@ -59,6 +61,7 @@ client.once('disconnect', () => {
   console.log('Disconnect!');
 });
 
+//deploy commands
 client.on('messageCreate', async message => {
   if (message.author.bot || !message.guild) return;
   if (!client.application?.owner) await client.application?.fetch();
@@ -73,23 +76,6 @@ client.on('messageCreate', async message => {
         message.reply('Could not deploy commands! Make sure the bot has the application.commands permission!');
         console.error(err);
       });
-  }
-});
-
-client.on('interactionCreate', async interaction => {
-  const command = client.commands.get(interaction.commandName.toLowerCase());
-
-  try {
-    if (interaction.commandName == 'ban' || interaction.commandName == 'userinfo') {
-      command.execute(interaction, client);
-    } else {
-      command.execute(interaction, player);
-    }
-  } catch (error) {
-    console.error(error);
-    interaction.followUp({
-      content: 'There was an error trying to execute that command!',
-    });
   }
 });
 
