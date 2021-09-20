@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const Client = require('./client/Client');
 const {token} = require('./config.json');
 const {Player} = require('discord-player');
+const server = client.guild.name;
 
 const client = new Client();
 client.commands = new Discord.Collection();
@@ -50,7 +51,7 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
-  client.user.setActivity(client.guilds.size + " server" + (client.guilds.size === 1 ? "" : "s"), { type: "WATCHING" });
+  client.user.setActivity(client.guilds.size + "server" + (client.guilds.size === 1 ? "" : "s"), { type: "WATCHING" });
  
 });
 
