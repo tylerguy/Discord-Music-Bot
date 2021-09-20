@@ -34,16 +34,9 @@ module.exports = {
       embeds: [
         {
           title: 'Now Playing',
-          description: `**${queue.current.title}**! (\`${perc.progress}%\`)`,
-          fields: [
-            {
-              name: '\u200b',
-              value: progress,
-            },
-          ],
-          color: 0xffffff,
-        },
-      ],
+          description: `**${queue.current.title}**!`,
+        }
+        ],
     });
   },
 };
