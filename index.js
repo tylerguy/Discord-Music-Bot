@@ -52,7 +52,7 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
-  const server = client.guild.name;
+  const server = guild.name;
   client.user.setActivity(server, { type: 'WATCHING' });
  
 });
