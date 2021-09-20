@@ -52,8 +52,6 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
-  client.user.setActivity("Testing Server", { type: 'WATCHING' });
- 
 });
 
 client.once('reconnecting', () => {
