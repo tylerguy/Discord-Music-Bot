@@ -2,6 +2,7 @@
 
 Commands are as follow:
 
+```
 Name: disconnect 
 
 **Description: Disconnects the bot from the voice channel**
@@ -41,3 +42,4 @@ Name: skip
 Name: stop
 
 **Description: Stop all songs in the queue!**
+```
