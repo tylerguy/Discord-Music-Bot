@@ -35,7 +35,7 @@ Description: View the queue of current songs!
  
 Name: resume
 
-**Description: Resume current song!** 
+Description: Resume current song!
  
 Name: skip
 
