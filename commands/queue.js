@@ -1,11 +1,19 @@
-const {GuildMember} = require('discord.js');
+const { GuildMember } = require("discord.js");
 
 module.exports = {
+  name: "queue",
+  description: "View the queue of current songs!",
 
-    name: 'queue',
-    description: 'View the queue of current songs!',
-
-    async execute (interaction, player) {
+  async execute(interaction, player) {
+    if (
+      !(interaction.member instanceof GuildMember) ||
+      !interaction.member.voice.channel
+    ) {
+      return void interaction.reply({
+        content: "You are not in a voice channel!",
+        ephemeral: true,
+      });
+    }
 
 
           
@@ -26,4 +34,5 @@ module.exports = {
             })
           }
     }
-}
+  },
+};
