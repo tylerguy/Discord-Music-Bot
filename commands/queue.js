@@ -14,15 +14,7 @@ module.exports = {
             });
           }
     
-          if (
-            interaction.guild.me.voice.channelId &&
-            interaction.member.voice.channelId !== interaction.guild.me.voice.channelId
-          ) {
-            return void interaction.reply({
-              content: 'You are not in my voice channel!',
-              ephemeral: true,
-            });
-          }
+          
           var queue = player.getQueue(interaction.guildId);
           if (typeof(queue) != 'undefined') {
             trimString = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
