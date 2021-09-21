@@ -18,6 +18,7 @@
   "homepage": "https://github.com/tylerguy/discord-bot#readme",
   "dependencies": {
     "@discordjs/opus": "^0.6.0",
+    "avconv": "^3.1.0",
     "discord-player": "^5.1.0",
     "discord.js": "^13.1.0",
     "ffmpeg": "0.0.4",
