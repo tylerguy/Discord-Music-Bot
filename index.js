@@ -36,7 +36,6 @@ player.on('queueEnd', queue => {
 
 client.once('ready', async () => {
   console.log('Ready!');
-
 });
 
 client.once('reconnecting', () => {
