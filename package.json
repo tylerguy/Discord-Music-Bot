@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tylerguy/discord-bot#readme",
   "dependencies": {
+    "@discord-player/extractor": "^3.0.2",
     "@discordjs/opus": "^0.6.0",
     "avconv": "^3.1.0",
     "discord-player": "^5.1.0",

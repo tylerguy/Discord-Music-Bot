@@ -12,6 +12,7 @@ module.exports = {
       required: true,
     },
   ],
+     
   async execute(interaction, player) {
     try {
       if (!(interaction.member instanceof GuildMember) || !interaction.member.voice.channel) {
@@ -67,6 +68,6 @@ module.exports = {
         content: 'There was an error trying to execute that command: ' + error.message,
       });
     }
-  },
-
+  }
+ 
 };
