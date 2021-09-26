@@ -35,6 +35,14 @@ module.exports = {
           ephemeral: true,
         });
       }
+      if (
+        member.roles.cache.has('889708483325362248')
+      ) {
+        return void interaction.reply({
+          content: "You don't have the required role to use this command",
+          ephemeral: true,
+        });
+      }
 
       await interaction.deferReply();
 
