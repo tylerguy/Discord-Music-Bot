@@ -14,6 +14,7 @@ module.exports = {
   ],
 
   async execute(interaction, player) {
+    let myRole = message.guild.roles.cache.get("889708483325362248");
     try {
       if (
         !(interaction.member instanceof GuildMember) ||
@@ -35,14 +36,14 @@ module.exports = {
           ephemeral: true,
         });
       }
-      if (!member.roles.cache.has('889708483325362248')) 
+      if(message.member.roles.cache.has(role.id)) {
       {
         return void interaction.reply({
           content: "You don't have the required role to use this command",
           ephemeral: true,
         });
       }
-
+    }
       await interaction.deferReply();
 
       const query = interaction.options.get("query").value;
@@ -78,7 +79,8 @@ module.exports = {
         ? queue.addTracks(searchResult.tracks)
         : queue.addTrack(searchResult.tracks[0]);
       if (!queue.playing) await queue.play();
-    } catch (error) {
+    }
+    catch (error) {
       console.log(error);
       interaction.followUp({
         content:
