@@ -36,7 +36,7 @@ module.exports = {
           ephemeral: true,
         });
       }
-      if(message.member.roles.cache.has(role.id)) {
+      if(interaction.member.roles.cache.has(role.id)) {
       {
         return void interaction.reply({
           content: "You don't have the required role to use this command",
