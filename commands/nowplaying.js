@@ -19,8 +19,8 @@ module.exports = {
         {
           title: 'Now Playing',
           description: `**${queue.current.title}**!`,
-        }
-        ],
+        },
+      ],
     });
   },
 };
