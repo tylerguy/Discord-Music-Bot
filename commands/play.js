@@ -1,6 +1,5 @@
 const { GuildMember } = require("discord.js");
 const { QueryType } = require("discord-player");
-const config = require('./config.json');
 
 module.exports = {
   name: "play",
