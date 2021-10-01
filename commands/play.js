@@ -1,5 +1,6 @@
 const { GuildMember } = require("discord.js");
 const { QueryType } = require("discord-player");
+const config = require('./config.json');
 
 module.exports = {
   name: "play",
@@ -42,7 +43,7 @@ module.exports = {
       const searchResult = await player
         .search(query, {
           requestedBy: interaction.user,
-          searchEngine: QueryType.AUTO,
+          searchEngine: QueryType.AUTO,                                                                                                                                                                                                          
         })
         .catch(() => {});
       if (!searchResult || !searchResult.tracks.length)
