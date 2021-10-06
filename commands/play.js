@@ -35,21 +35,14 @@ module.exports = {
           ephemeral: true,
         });
       }
-      if(!interaction.member.roles.cache.has("889708483325362248")) {
-      {
-        return void interaction.reply({
-          content: "You don't have the required role to use this command",
-          ephemeral: true,
-        });
-      }
-    }
+  
       await interaction.deferReply();
 
       const query = interaction.options.get("query").value;
       const searchResult = await player
         .search(query, {
           requestedBy: interaction.user,
-          searchEngine: QueryType.AUTO,
+          searchEngine: QueryType.AUTO,                                                                                                                                                                                                          
         })
         .catch(() => {});
       if (!searchResult || !searchResult.tracks.length)
