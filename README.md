@@ -27,7 +27,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/tylerguy/discord-bot">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="1f3d4f878c1afe3a3218129864280387.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Discord Music Bot</h3>
