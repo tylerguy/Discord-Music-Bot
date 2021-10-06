@@ -33,7 +33,7 @@
 <h3 align="center">Discord Music Bot</h3>
 
   <p align="center">
-    project_description
+    General Purpose Music Bot used on a select number of servers
     <br />
     <a href="https://github.com/tylerguy/discord-bot"><strong>Explore the docs »</strong></a>
     <br />
