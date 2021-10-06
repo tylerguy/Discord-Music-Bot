@@ -121,12 +121,12 @@ install them.
 
 ## Roadmap
 
-- [] Volume Control
-- [] Lyrics Support
-- [] Web Control Panel (for easier config)
-  - [] Ability to change bot token
-  - [] Restrict bot to certain user/channels
-  - [] Change bot responses to queries
+- [ ] Volume Control
+- [ ] Lyrics Support
+- [ ] Web Control Panel (for easier config)
+  - [ ] Ability to change bot token
+  - [ ] Restrict bot to certain user/channels
+  - [ ] Change bot responses to queries
 
 See the [open issues](https://github.com/tylerguy/discord-bot/issues) for a full
 list of proposed features (and known issues).
