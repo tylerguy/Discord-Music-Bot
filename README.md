@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/tylerguy/discord-bot">
+  <a href="https://github.com/tylerguy/discord-music-bot">
     <img src="1f3d4f878c1afe3a3218129864280387.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -33,12 +33,12 @@
   <p align="center">
     General Purpose Music Bot
     <br />
-    <a href="https://github.com/tylerguy/discord-bot"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tylerguy/discord-music-bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tylerguy/discord-bot/issues">Report Bug</a>
+    <a href="https://github.com/tylerguy/discord-music-bot/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tylerguy/discord-bot/issues">Request Feature</a>
+    <a href="https://github.com/tylerguy/discord-music-bot/issues">Request Feature</a>
   </p>
 </div>
 
@@ -103,7 +103,7 @@ install them.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/tylerguy/discord-bot
+   git clone https://github.com/tylerguy/discord-music-bot
    ```
 2. Install NPM packages
    ```sh
@@ -128,7 +128,7 @@ install them.
   - [ ] Restrict bot to certain user/channels
   - [ ] Change bot responses to queries
 
-See the [open issues](https://github.com/tylerguy/discord-bot/issues) for a full
+See the [open issues](https://github.com/tylerguy/discord-music-bot/issues) for a full
 list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -153,14 +153,6 @@ create a pull request. You can also simply open an issue with the tag
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- CONTACT -->
 
 ## Contact
@@ -169,7 +161,7 @@ Tyler Denman - [@tylerdenman18](https://twitter.com/TylerDenman18) -
 tylerdenman200@gmail.com
 
 Project Link:
-[https://github.com/tylerguy/discord-bot](https://github.com/tylerguy/discord-bot)
+[https://github.com/tylerguy/discord-music-bot](https://github.com/tylerguy/discord-bot)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -177,17 +169,17 @@ Project Link:
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]:
-  https://img.shields.io/github/contributors/tylerguy/discord-bot.svg?style=for-the-badge
+  https://img.shields.io/github/contributors/tylerguy/discord-music-bot.svg?style=for-the-badge
 [contributors-url]: https://github.com/tylerguy/discord-bot/graphs/contributors
 [forks-shield]:
-  https://img.shields.io/github/forks/tylerguy/discord-bot.svg?style=for-the-badge
+  https://img.shields.io/github/forks/tylerguy/discord-music-bot.svg?style=for-the-badge
 [forks-url]: https://github.com/tylerguy/discord-bot/network/members
 [stars-shield]:
-  https://img.shields.io/github/stars/tylerguy/discord-bot.svg?style=for-the-badge
+  https://img.shields.io/github/stars/tylerguy/discord-music-bot.svg?style=for-the-badge
 [stars-url]: https://github.com/tylerguy/discord-bot/stargazers
 [issues-shield]:
-  https://img.shields.io/github/issues/tylerguy/discord-bot.svg?style=for-the-badge
+  https://img.shields.io/github/issues/tylerguy/discord-music-bot.svg?style=for-the-badge
 [issues-url]: https://github.com/tylerguy/discord-bot/issues
 [license-shield]:
-  https://img.shields.io/github/license/tylerguy/discord-bot.svg?style=for-the-badge
+  https://img.shields.io/github/license/tylerguy/discord-music-bot.svg?style=for-the-badge
 [license-url]: https://github.com/tylerguy/discord-bot/blob/master/LICENSE.txt
