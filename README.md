@@ -165,7 +165,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@tylerdenman18](https://twitter.com/TylerDenman18) -
+Tyler Denman - [@tylerdenman18](https://twitter.com/TylerDenman18) -
 tylerdenman200@gmail.com
 
 Project Link:
