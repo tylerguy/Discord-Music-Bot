@@ -31,7 +31,6 @@ module.exports = {
       return void interaction.followUp({
         content: "No music is being played!",
       });
-    queue.destroy();
     return void interaction.followUp({
       content: "Disconnected from the voice channel"
     });
