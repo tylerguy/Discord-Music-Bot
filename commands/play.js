@@ -20,7 +20,7 @@ module.exports = {
         !interaction.member.voice.channel
       ) {
         return void interaction.reply({
-          content: "You are not in a voice channel!",
+          content: "❌ - You are not in a voice channel!",
           ephemeral: true,
         });
       }
@@ -31,9 +31,17 @@ module.exports = {
           interaction.guild.me.voice.channelId
       ) {
         return void interaction.reply({
-          content: "You are not in my voice channel!",
+          content: "❌ - You are not in my voice channel!",
           ephemeral: true,
         });
+      }
+      if(!interaction.member.roles.cache.has("879102011314933810")) {
+        {
+          return void interaction.reply({
+            content: "❌ - You don't have the required role to use this command",
+            ephemeral: true,
+          });
+        }
       }
   
       await interaction.deferReply();
@@ -46,8 +54,7 @@ module.exports = {
         })
         .catch(() => {});
       if (!searchResult || !searchResult.tracks.length)
-        return void interaction.followUp({ content: "No results were found!" });
-
+        return void interaction.followUp({ content: "🔎 - No results were found!" });
       const queue = await player.createQueue(interaction.guild, {
         metadata: interaction.channel,
       });
@@ -58,12 +65,12 @@ module.exports = {
       } catch {
         void player.deleteQueue(interaction.guildId);
         return void interaction.followUp({
-          content: "Could not join your voice channel!",
+          content: "❌ - Could not join your voice channel!",
         });
       }
 
       await interaction.followUp({
-        content: `Loading your ${
+        content: `🎵 - Loading your ${
           searchResult.playlist ? "playlist" : "track"
         }...`,
       });
@@ -76,7 +83,7 @@ module.exports = {
       console.log(error);
       interaction.followUp({
         content:
-          "There was an error trying to execute that command: " + error.message,
+          "❌ - There was an error trying to execute that command: " + error.message,
       });
     }
   },

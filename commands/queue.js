@@ -6,10 +6,7 @@ module.exports = {
 
   async execute(interaction, player) {
  
-
-
-          
-          var queue = player.getQueue(interaction.guildId);
+        var queue = player.getQueue(interaction.guildId);
           if (typeof(queue) != 'undefined') {
             trimString = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
               return void interaction.reply({

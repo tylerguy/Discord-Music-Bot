@@ -25,21 +25,21 @@ player.on("connectionError", (queue, error) => {
   );
 });
 player.on("trackStart", (queue, track) => {
-  queue.metadata.send(`Started playing: **${track.title}**`);
+  queue.metadata.send(`▶ - Started playing: **${track.title}**`);
 });
 player.on("trackAdd", (queue, track) => {
-  queue.metadata.send(`Track **${track.title}** queued!`);
+  queue.metadata.send(`📒 - Track **${track.title}** queued!`);
 });
 player.on("botDisconnect", (queue) => {
   queue.metadata.send(
-    "I was manually disconnected from the voice channel, clearing queue!"
+    "🚪 - I was manually disconnected from the voice channel, clearing queue!"
   );
 });
 player.on("channelEmpty", (queue) => {
-  queue.metadata.send("Nobody is in the voice channel, leaving...");
+  queue.metadata.send("👋 - Nobody is in the voice channel, leaving...");
 });
 player.on("queueEnd", (queue) => {
-  queue.metadata.send("Queue finished!");
+  queue.metadata.send("⏹ - Queue finished!");
 });
 
 client.once("ready", async () => {
