@@ -39,7 +39,7 @@ module.exports = {
       if(!interaction.member.roles.cache.has("879102011314933810")) {
         {
           return void interaction.reply({
-            content: "❌ - You don't have the required role to use this command>
+            content: "❌ - You don't have the required role to use this command",
             ephemeral: true,
           });
         }
