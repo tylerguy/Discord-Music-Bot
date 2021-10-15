@@ -1,42 +1,46 @@
-const {GuildMember} = require("discord.js");
-const {QueryType} = require("discord-player");
+const { GuildMember } = require("discord.js");
+const { QueryType } = require("discord-player");
 
 module.exports = {
-  name : "play",
-  description : "Play a song in your channel!",
-  options : [
+  name: "play",
+  description: "Play a song in your channel!",
+  options: [
     {
-      name : "query",
-      type : 3, // 'STRING' Type
-      description : "The song you want to play",
-      required : true,
+      name: "query",
+      type: 3, // 'STRING' Type
+      description: "The song you want to play",
+      required: true,
     },
   ],
 
   async execute(interaction, player) {
     try {
-      if (!(interaction.member instanceof GuildMember) ||
-          !interaction.member.voice.channel) {
+      if (
+        !(interaction.member instanceof GuildMember) ||
+        !interaction.member.voice.channel
+      ) {
         return void interaction.reply({
-          content : "❌ - You are not in a voice channel!",
-          ephemeral : true,
+          content: "❌ - You are not in a voice channel!",
+          ephemeral: true,
         });
       }
 
-      if (interaction.guild.me.voice.channelId &&
-          interaction.member.voice.channelId !==
-              interaction.guild.me.voice.channelId) {
+      if (
+        interaction.guild.me.voice.channelId &&
+        interaction.member.voice.channelId !==
+          interaction.guild.me.voice.channelId
+      ) {
         return void interaction.reply({
-          content : "❌ - You are not in my voice channel!",
-          ephemeral : true,
+          content: "❌ - You are not in my voice channel!",
+          ephemeral: true,
         });
       }
       if (!interaction.member.roles.cache.has("879102011314933810")) {
         {
           return void interaction.reply({
-            content :
-                "❌ - You don't have the required role to use this command",
-            ephemeral : true,
+            content:
+              "❌ - You don't have the required role to use this command",
+            ephemeral: true,
           });
         }
       }
@@ -45,16 +49,17 @@ module.exports = {
 
       const query = interaction.options.get("query").value;
       const searchResult = await player
-                               .search(query, {
-                                 requestedBy : interaction.user,
-                                 searchEngine : QueryType.AUTO,
-                               })
-                               .catch(() => {});
+        .search(query, {
+          requestedBy: interaction.user,
+          searchEngine: QueryType.AUTO,
+        })
+        .catch(() => {});
       if (!searchResult || !searchResult.tracks.length)
-        return void interaction.followUp(
-            {content : "🔎 - No results were found!"});
+        return void interaction.followUp({
+          content: "🔎 - No results were found!",
+        });
       const queue = await player.createQueue(interaction.guild, {
-        metadata : interaction.channel,
+        metadata: interaction.channel,
       });
 
       try {
@@ -63,23 +68,25 @@ module.exports = {
       } catch {
         void player.deleteQueue(interaction.guildId);
         return void interaction.followUp({
-          content : "❌ - Could not join your voice channel!",
+          content: "❌ - Could not join your voice channel!",
         });
       }
 
       await interaction.followUp({
-        content : `🎵 - Loading your ${
-            searchResult.playlist ? "playlist" : "track"}...`,
+        content: `🎵 - Loading your ${
+          searchResult.playlist ? "playlist" : "track"
+        }...`,
       });
-      searchResult.playlist ? queue.addTracks(searchResult.tracks)
-                            : queue.addTrack(searchResult.tracks[0]);
-      if (!queue.playing)
-        await queue.play();
+      searchResult.playlist
+        ? queue.addTracks(searchResult.tracks)
+        : queue.addTrack(searchResult.tracks[0]);
+      if (!queue.playing) await queue.play();
     } catch (error) {
       console.log(error);
       interaction.followUp({
-        content : "❌ - There was an error trying to execute that command: " +
-                      error.message,
+        content:
+          "❌ - There was an error trying to execute that command: " +
+          error.message,
       });
     }
   },

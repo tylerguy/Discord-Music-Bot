@@ -1,30 +1,34 @@
-const {GuildMember} = require('discord.js');
+const { GuildMember } = require("discord.js");
 
 module.exports = {
-  name : 'skip',
-  description : 'Skip a song!',
+  name: "skip",
+  description: "Skip a song!",
   async execute(interaction, player) {
-    if (!(interaction.member instanceof GuildMember) ||
-        !interaction.member.voice.channel) {
+    if (
+      !(interaction.member instanceof GuildMember) ||
+      !interaction.member.voice.channel
+    ) {
       return void interaction.reply({
-        content : 'You are not in a voice channel!',
-        ephemeral : true,
+        content: "You are not in a voice channel!",
+        ephemeral: true,
       });
     }
 
-    if (interaction.guild.me.voice.channelId &&
-        interaction.member.voice.channelId !==
-            interaction.guild.me.voice.channelId) {
+    if (
+      interaction.guild.me.voice.channelId &&
+      interaction.member.voice.channelId !==
+        interaction.guild.me.voice.channelId
+    ) {
       return void interaction.reply({
-        content : 'You are not in my voice channel!',
-        ephemeral : true,
+        content: "You are not in my voice channel!",
+        ephemeral: true,
       });
     }
     if (!interaction.member.roles.cache.has("879102011314933810")) {
       {
         return void interaction.reply({
-          content : "You don't have the required role to use this command",
-          ephemeral : true,
+          content: "You don't have the required role to use this command",
+          ephemeral: true,
         });
       }
     }
@@ -32,12 +36,15 @@ module.exports = {
     await interaction.deferReply();
     const queue = player.getQueue(interaction.guildId);
     if (!queue || !queue.playing)
-      return void interaction.followUp({content : 'No music is being played!'});
+      return void interaction.followUp({
+        content: "No music is being played!",
+      });
     const currentTrack = queue.current;
     const success = queue.skip();
     return void interaction.followUp({
-      content : success ? `Skipped **${currentTrack}**!`
-                        : 'Something went wrong!',
+      content: success
+        ? `Skipped **${currentTrack}**!`
+        : "Something went wrong!",
     });
   },
 };
