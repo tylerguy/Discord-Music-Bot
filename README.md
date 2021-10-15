@@ -139,6 +139,9 @@ install them.
    ```sh
    node index.js
    ```
+5. In your discord server, use the command ```!deploy``` to enable slash commands
+
+6. You're all done, you can now see all the commands using ```/``` in any channel
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
