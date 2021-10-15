@@ -85,7 +85,7 @@
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project
+This is an example of you can get started setting up your project
 locally. To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -93,11 +93,37 @@ locally. To get a local copy up and running follow these simple example steps.
 This is an example of how to list things you need to use the software and how to
 install them.
 
-- npm
+- Nodejs 16
+  - First make sure that your OS is up to date (for this example, I'll be using ubuntu 2004)
+  
   ```sh
-  npm install npm@latest -g
+  sudo apt update
+  sudo apt upgrade
   ```
-
+  - Make sure that you have curl installed
+  
+  ```sh
+  sudo apt install -y curl
+  ```
+  
+  - Once you have ```curl``` installed, run the setup script
+  
+  ```sh
+  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  ```
+  
+  - Once you've done that, you can go ahead and install or update your current version of node.js
+  
+  ```sh
+  sudo apt install -y nodejs
+  ```
+  
+  - Once the installation has completed, you can run this command to make sure that the right version is installed:
+  ```sh
+  node --version
+  ```
+  ***If the result is ```v.16.x.x```, then you should be good.***
+  
 ### Installation
 
 1. Clone the repo
