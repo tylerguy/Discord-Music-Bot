@@ -117,6 +117,7 @@ install them.
   ```sh
   sudo apt install -y nodejs
   ```
+  and FFmpeg
   ```sh
   sudo apt install -y FFmpeg
   ```
