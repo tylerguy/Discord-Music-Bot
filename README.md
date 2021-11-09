@@ -93,7 +93,7 @@ locally. To get a local copy up and running follow these simple example steps.
 This is an example of how to list things you need to use the software and how to
 install them.
 
-- Nodejs 16
+- Nodejs 16 & FFmpeg
   - First make sure that your OS is up to date (for this example, I'll be using ubuntu 2004)
   
   ```sh
@@ -116,6 +116,9 @@ install them.
   
   ```sh
   sudo apt install -y nodejs
+  ```
+  ```sh
+  sudo apt install -y FFmpeg
   ```
   
   - Once the installation has completed, you can run this command to make sure that the right version is installed:
