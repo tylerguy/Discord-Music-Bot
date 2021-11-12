@@ -19,6 +19,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[Top Language](https://img.shields.io/github/languages/top/tylerguy/Discord-Music-Bot?style=for-the-badge)
 
 
 <!-- PROJECT LOGO -->
