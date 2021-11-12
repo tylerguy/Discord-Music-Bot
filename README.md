@@ -19,8 +19,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[Top Language](https://img.shields.io/github/languages/top/tylerguy/Discord-Music-Bot?style=for-the-badge)
-
+[![Top_Language]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -216,3 +215,4 @@ Project Link:
 [license-shield]:
   https://img.shields.io/github/license/tylerguy/discord-music-bot.svg?style=for-the-badge
 [license-url]: https://github.com/tylerguy/discord-bot/blob/master/LICENSE.txt
+[top-language]: https://img.shields.io/github/languages/top/tylerguy/Discord-Music-Bot?style=for-the-badge
