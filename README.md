@@ -23,6 +23,7 @@
 ![Repo Size][repo-size]
 <br />
 ![Discord-Player][Discord-Player]
+![ytdl-core][ytdl-core]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -221,3 +222,4 @@ Project Link:
 [top-language]: https://img.shields.io/github/languages/top/tylerguy/Discord-Music-Bot?style=for-the-badge
 [repo-size]: https://img.shields.io/github/repo-size/tylerguy/Discord-Music-Bot?style=for-the-badge
 [Discord-Player]: https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/discord-player
+[ytdl-core]: https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/ytdl-core
