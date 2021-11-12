@@ -21,6 +21,7 @@
 [![Issues][issues-shield]][issues-url]
 ![Top Language][top-language]
 ![Repo Size][repo-size]
+<br />
 ![Discord-Player][Discord-Player]
 
 <!-- PROJECT LOGO -->
