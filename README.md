@@ -19,7 +19,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[top-language]
+[Top Language][top-language]
 
 <!-- PROJECT LOGO -->
 <br />
