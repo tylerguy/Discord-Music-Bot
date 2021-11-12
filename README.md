@@ -21,6 +21,7 @@
 [![Issues][issues-shield]][issues-url]
 ![Top Language][top-language]
 ![Repo Size][repo-size]
+![Discord-Player][https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/discord-player]
 
 <!-- PROJECT LOGO -->
 <br />
