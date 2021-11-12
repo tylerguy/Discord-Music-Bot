@@ -21,7 +21,7 @@
 [![Issues][issues-shield]][issues-url]
 ![Top Language][top-language]
 ![Repo Size][repo-size]
-![Discord-Player][https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/discord-player]
+![Discord-Player][Discord-Player]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -219,3 +219,4 @@ Project Link:
 [license-url]: https://github.com/tylerguy/discord-bot/blob/master/LICENSE.txt
 [top-language]: https://img.shields.io/github/languages/top/tylerguy/Discord-Music-Bot?style=for-the-badge
 [repo-size]: https://img.shields.io/github/repo-size/tylerguy/Discord-Music-Bot?style=for-the-badge
+[Discord-Player]: https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/discord-player
