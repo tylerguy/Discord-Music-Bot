@@ -24,7 +24,7 @@
 <br />
 ![Discord-Player][Discord-Player]
 ![ytdl-core][ytdl-core]
-![Discord-js][discord-js]
+![Discord-js][discord.js]
 
 <!-- PROJECT LOGO -->
 <br />
