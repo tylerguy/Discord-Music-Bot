@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/tylerguy/discord-music-bot">
+  <a href="https://github.com/TylerDev-me/discord-music-bot">
     <img src="1f3d4f878c1afe3a3218129864280387.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -38,12 +38,12 @@
   <p align="center">
     General Purpose Music Bot
     <br />
-    <a href="https://github.com/tylerguy/discord-music-bot"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/TylerDev-me/discord-music-bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tylerguy/discord-music-bot/issues">Report Bug</a>
+    <a href="https://github.com/TylerDev-me/discord-music-bot/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tylerguy/discord-music-bot/issues">Request Feature</a>
+    <a href="https://github.com/TylerDev-me/discord-music-bot/issues">Request Feature</a>
   </p>
 </div>
 
@@ -165,7 +165,7 @@ install them.
   - [ ] Restrict bot to certain user/channels
   - [ ] Change bot responses to queries
 
-See the [open issues](https://github.com/tylerguy/discord-music-bot/issues) for a full
+See the [open issues](https://github.com/TylerDev-me/discord-music-bot/issues) for a full
 list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -198,7 +198,7 @@ Tyler Denman - [@tylerdenman18](https://twitter.com/TylerDenman18) -
 tylerdenman200@gmail.com
 
 Project Link:
-[https://github.com/tylerguy/discord-music-bot](https://github.com/tylerguy/discord-bot)
+[https://github.com/TylerDev-me/discord-music-bot](https://github.com/tylerguy/discord-bot)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -206,22 +206,22 @@ Project Link:
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]:
-  https://img.shields.io/github/contributors/tylerguy/discord-music-bot.svg?style=for-the-badge
-[contributors-url]: https://github.com/tylerguy/discord-bot/graphs/contributors
+  https://img.shields.io/github/contributors/TylerDev-me/discord-music-bot.svg?style=for-the-badge
+[contributors-url]: https://github.com/TylerDev-me/discord-bot/graphs/contributors
 [forks-shield]:
-  https://img.shields.io/github/forks/tylerguy/discord-music-bot.svg?style=for-the-badge
-[forks-url]: https://github.com/tylerguy/discord-bot/network/members
+  https://img.shields.io/github/forks/TylerDev-me/discord-music-bot.svg?style=for-the-badge
+[forks-url]: https://github.com/TylerDev-me/discord-bot/network/members
 [stars-shield]:
-  https://img.shields.io/github/stars/tylerguy/discord-music-bot.svg?style=for-the-badge
-[stars-url]: https://github.com/tylerguy/discord-bot/stargazers
+  https://img.shields.io/github/stars/TylerDev-me/discord-music-bot.svg?style=for-the-badge
+[stars-url]: https://github.com/TylerDev-me/discord-bot/stargazers
 [issues-shield]:
-  https://img.shields.io/github/issues/tylerguy/discord-music-bot.svg?style=for-the-badge
-[issues-url]: https://github.com/tylerguy/discord-bot/issues
+  https://img.shields.io/github/issues/TylerDev-me/discord-music-bot.svg?style=for-the-badge
+[issues-url]: https://github.com/TylerDev-me/discord-bot/issues
 [license-shield]:
-  https://img.shields.io/github/license/tylerguy/discord-music-bot.svg?style=for-the-badge
-[license-url]: https://github.com/tylerguy/discord-bot/blob/master/LICENSE.txt
-[top-language]: https://img.shields.io/github/languages/top/tylerguy/Discord-Music-Bot?style=for-the-badge
-[repo-size]: https://img.shields.io/github/repo-size/tylerguy/Discord-Music-Bot?style=for-the-badge
-[Discord-Player]: https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/discord-player
-[ytdl-core]: https://img.shields.io/github/package-json/dependency-version/tylerguy/discord-music-bot/ytdl-core
-[discord.js]: https://img.shields.io/github/package-json/dependency-version/tylerguy/Discord-Music-Bot/discord.js
+  https://img.shields.io/github/license/TylerDev-me/discord-music-bot.svg?style=for-the-badge
+[license-url]: https://github.com/TylerDev-me/discord-bot/blob/master/LICENSE.txt
+[top-language]: https://img.shields.io/github/languages/top/TylerDev-me/Discord-Music-Bot?style=for-the-badge
+[repo-size]: https://img.shields.io/github/repo-size/TylerDev-me/Discord-Music-Bot?style=for-the-badge
+[Discord-Player]: https://img.shields.io/github/package-json/dependency-version/TylerDev-me/discord-music-bot/discord-player
+[ytdl-core]: https://img.shields.io/github/package-json/dependency-version/TylerDev-me/discord-music-bot/ytdl-core
+[discord.js]: https://img.shields.io/github/package-json/dependency-version/TylerDev-me/Discord-Music-Bot/discord.js
