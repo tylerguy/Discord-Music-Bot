@@ -90,16 +90,15 @@
 
 ## Getting Started
 
-This is an example of you can get started setting up your project
+This is an example of how you can get started setting up your bot
 locally. To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to
-install them.
+This is a list of software you need to use and how to install them.
 
 - Nodejs 16 & FFmpeg
-  - First make sure that your OS is up to date (for this example, I'll be using ubuntu 2004)
+  - First make sure that your OS is up to date (for this example, I'll be using ubuntu 20.04)
   
   ```sh
   sudo apt update
